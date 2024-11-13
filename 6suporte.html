@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Usuários - babycops</title>
+    <style>
+        body,
+        h1,
+        h2,
+        p,
+        figure,
+        img {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url(Cópia\ de\ A\ baby\ cops\ \(6\)\ .png);
+            color: #333;
+            line-height: 1.6;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        header {
+            background-image: url(cabeçalho.png);
+            color: rgb(160, 146, 159);
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .user-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 15px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .user-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .user-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 4px solid #3be6ec;
+        }
+
+        .user-card .card-content {
+            padding: 20px;
+        }
+
+        .user-card h2 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .user-card p {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        .user-card .details {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .user-card .btn {
+            display: inline-block;
+            background-color: #ca5de6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .user-card .btn:hover {
+            background-color: #34b8da;
+        }
+
+        .user-cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+
+        @media (max-width: 768px) {
+            .user-card {
+                width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .user-card {
+                width: 200px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .botao {
+            background-color: #7e52b8;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .botao:hover {
+            background-color: #6200b3;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>LISTA DE SUPORTE</h1>
+    </header>
+
+
+
+
+    <div class="container">
+        <div class="user-cards-container">
+
+            <div class="user-card">
+                <img src="ftizaque.png" alt="Usuário 1">
+                <div class="card-content">
+                    <h2>Izaque Vieira</h2>
+                    <p>Gestor</p>
+                    <div class="details">
+                        <p>Email:Izaquevieira@baby.cops.com</p>
+                        <p>Telefone: (27) 99999-9999</p>
+                    </div>
+                    <a href="#" class="btn">Ver Detalhes</a>
+                </div>
+            </div>
+
+            <div class="user-card">
+                <img src="ftsamuel.png" alt="Usuário 1">
+                <div class="card-content">
+                    <h2>Samuel inocente</h2>
+                    <p>Gestor</p>
+                    <div class="details">
+                        <p>Email: samuel.silva@baby.cops.com</p>
+                        <p>Telefone: (27) 99999-9999</p>
+                    </div>
+                    <a class="btn">Ver Detalhes</a>
+                </div>
+            </div>
+
+
+            <div class="user-card">
+                <img src="ftCarol.png" alt="Usuário 2">
+                <div class="card-content">
+                    <h2>Ana Caroline </h2>
+                    <p>Gestora</p>
+                    <div class="details">
+                        <p>Email: Anasilva@baby.cops.com</p>
+                        <p>Telefone: (27) 98888-8888</p>
+                    </div>
+                    <a class="btn">Ver Detalhes</a>
+                </div>
+            </div>
+
+
+            <div class="user-card">
+                <img src="ftevelyn.png" alt="Usuário 3">
+                <div class="card-content">
+                    <h2>Evelyn silva</h2>
+                    <p>Gestora</p>
+                    <div class="details">
+                        <p>Email: evelynsbatista@baby.cops.com</p>
+                        <p>Telefone: (27) 97777-7777</p>
+                    </div>
+                    <a class="btn">Ver Detalhes</a>
+                </div>
+            </div>
+
+
+            <div class="user-card">
+                <img src="ftjamilly.png" alt="Usuário 4">
+                <div class="card-content">
+                    <h2>Jamily Rosa</h2>
+                    <p>Gestora</p>
+                    <div class="details">
+                        <p>Email: Jamilyrosa@baby.cops.com</p>
+                        <p>Telefone: (27) 96666-6666</p>
+                    </div>
+                    <a class="btn">Ver Detalhes</a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <a href="4paginicial.html" class="botao">Voltar</a>
+</body>
+
+</html>

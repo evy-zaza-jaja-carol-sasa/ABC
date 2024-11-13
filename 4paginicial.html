@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial - ABC Baby Cops</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(Cópia\ de\ A\ baby\ cops\ \(4\).png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .botao {
+            background-color: #7e52b8;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .botao:hover {
+            background-color: #2c74c5;
+            text-decoration: none;
+        }
+
+        header {
+            background-image: url(cabeçalho.png);
+            color: rgb(124, 78, 120);
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            margin: 20px;
+        }
+
+        .chat-panel {
+            width: 30%;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+            padding: 10px;
+        }
+
+        .chat-panel h2 {
+            margin-top: 0;
+
+
+        }
+
+        .chat-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .chat-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-panel {
+            width: 70%;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        button {
+            background-color: #7e52b8;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        
+        #closeModal {
+            font-size: 30px;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        #closeModal:hover,
+        #closeModal:focus {
+            color: black;
+            text-decoration: none;
+        }
+        
+
+        .chat-container {
+            width: 580px;
+            max-width: 100%;
+            background-color: #fff;
+            border-radius: 9px;
+            border-left: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            margin: 20px;
+            padding: 20px;
+
+        }
+
+        .chat-box {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+
+        }
+
+        .input-container {
+            display: flex;
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+            border-left: 8px;
+        }
+
+        .input-container input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .input-container button {
+            padding: 10px 15px;
+            background-color: #7e52b8;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .input-container button:hover {
+            background-color: #2c74c5;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .chat-message {
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background-color: #d0e6ff;
+            align-self: flex-end;
+        }
+
+        .bot-message {
+            background-color: #e6e6e6;
+            align-self: flex-start;
+        }
+
+        .texto p {
+            justify-content: space-around;
+
+        }
+        button:hover {
+            background-color: #2c74c5;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Bem-vindos ao ABC Baby Cops!</h1>
+    </header>
+
+    <div class="container">
+        <div class="chat-panel">
+            <h2 style="text-align: center;">Chats Recentes</h2>
+            <div class="chat-item">Caroline - Última mensagem...</div>
+            <div class="chat-item">Izaque - Última mensagem...</div>
+            <div class="chat-item">Evelyn - Última mensagem...</div>
+        </div>
+
+        <div class="info-panel">
+            <h2>Informações do Usuário</h2>
+            <button id="infoButton">Minhas Informações</button>
+            <br>
+            <a href="5local.html" class="botao">Encontre outros Usuários</a>
+            <br>
+            <a href="6suporte.html" class="botao">Suporte</a>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span id="closeModal" style="float:right; cursor:pointer;">&times;</span>
+                    <h3>Informações Pessoais</h3>
+                    <p><strong>Nome:</strong> Jamilly Rosa</p>
+                    <p><strong>Email:</strong> jamillyabc@gmail.com</p>
+                    <p><strong>Data de Nascimento:</strong> 14/12/2006</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="chat-container">
+        <h3 style="text-align: center;">Chat atual - Samuel Inocente</h3>
+        <div class="chat-box" id="chat-box">
+
+        </div>
+        
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Digite sua pergunta..." />
+        <button id="send-btn">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        const respostas = {
+        "oi,preciso de ajuda! como faço para o meu bebe parar de chorar por conta da colica?": "oi boa tarde! enrole seu bebe num cobertor fino, para ele se sentir seguro e aquecido, logo apos isso de um banho com agua morna." ,
+        "como saber se meu filho esta com fome ou com sono?": "entao maezinha ou paizinho, se o seu filho(a) coçar os olhos com muita frequencia isso significa que ele esta com sono",
+        "quais sao os melhores produtos para bebe, para lavar o cabelo?": "HUGGIES Shampoo Extra Suave Livre de Lágrimas, JOHNSON'S Shampoo Baby de Glicerina, POM POM Shampoo Pom Pom Suave",
+        "quais sao os melhores lites para recem-nascido?": "Leite para bebés Nestlé NAN Supreme 1, Nutribén Leite em Pó Innova OLM 1, Leite de Início Nestlé Nidina 1 Premium.",
+        "qual a melhor posicao para amamentar?": "exitem varias mais a melhor é a rugby. Mais é importante encontrar uma que seja mais confortavel para voce e seu bebe",
+    };
+
+    const chatBox = document.getElementById("chat-box");
+    const userInput = document.getElementById("user-input");
+    const sendBtn = document.getElementById("send-btn");
+
+   
+    function addMessage(message, isUser = false) {
+        const messageElement = document.createElement("div");
+        messageElement.classList.add("chat-message");
+        if (isUser) {
+            messageElement.classList.add("user-message");
+        } else {
+            messageElement.classList.add("bot-message");
+        }
+        messageElement.textContent = message;
+        chatBox.appendChild(messageElement);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+   
+    function getBotResponse(userMessage) {
+        const formattedMessage = userMessage.toLowerCase().trim();
+        return respostas[formattedMessage] || "Desculpe, não entendi a sua pergunta.";
+    }
+
+    function handleUserMessage() {
+        const userMessage = userInput.value;
+        if (userMessage.trim() === "") return;
+
+       
+        addMessage(userMessage, true);
+        userInput.value = ""; 
+        
+        setTimeout(() => {
+            const botResponse = getBotResponse(userMessage);
+            addMessage(botResponse, false);
+        }, 500);
+    }
+
+    
+    sendBtn.addEventListener("click", handleUserMessage);
+
+    
+    userInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            handleUserMessage();
+        }
+    });
+
+
+
+
+
+
+
+   
+    var modal = document.getElementById("myModal");
+        var btn = document.getElementById("infoButton");
+        var span = document.getElementById("closeModal");
+
+        
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+       
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
